@@ -50,7 +50,7 @@ jobs:
       with:
         repository: vijejain/cicd-actions-bugbash
         ref: refs/heads/main
-        token: ${{ secrets.PAT }}
+        token: ${{ secrets.TOKEN }}
         path: ./.github/vijejain/cicd-actions-bugbash
 
     - name: Configure AWS Credentials
