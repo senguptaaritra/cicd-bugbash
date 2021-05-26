@@ -58,7 +58,7 @@ jobs:
 
     - name: AWS CodeGuru Reviewer
       uses: ./.github/vijejain/cicd-actions-bugbash
-      if: ${{ always() }}
+      if: ${{ success() }}
       with:          
         name: new-cicd-repo
         source_path: . # Java source code root
@@ -67,7 +67,7 @@ jobs:
         
 
     - name: Upload review result
-      if: ${{ always() }}
+      if: ${{ success() }}
       uses: github/codeql-action/upload-sarif@v1
       with:
         sarif_file: codeguru-results.sarif.json
